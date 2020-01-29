@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            tf.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            tf.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
