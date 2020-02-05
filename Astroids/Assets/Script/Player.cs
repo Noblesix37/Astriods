@@ -37,8 +37,16 @@ public class Player : MonoBehaviour
             tf.Rotate(0,0, rotationSpeed * Time.deltaTime);
         }
     }
+     void OnCollisionEnter2D (Collision2D otherObject)
+    {
+        Debug.Log("[Collision Entered]The GameObject of the other object is named: " + otherObject.gameObject.name);
+    }
 
-   public void Shoot()
+    void OnCollisionExit2D(Collision2D otherObject)
+    {
+        Debug.Log("[Collision Exited]The GameObject of the other object is named: " + otherObject.gameObject.name);
+    }
+    public void Shoot()
     {
         throw new NotImplementedException();
     }
