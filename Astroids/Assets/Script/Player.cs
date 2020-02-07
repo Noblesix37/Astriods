@@ -50,4 +50,17 @@ public class Player : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+    void OnDestroy()
+    {
+        // if the player dies, lose a life.
+        GameManager.instance.lives -= 1;
+        if (GameManager.instance.lives > 0)
+        {
+            GameManager.instance.Respawn();
+        }
+        else
+        {
+            Debug.Log("Gameover");
+        }
+    }
 }

@@ -5,19 +5,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject playerPrefab;
+    public GameObject player;
     public static GameManager instance;
+    public int lives = 3;
     public int score = 0;
     public bool isPaused = false;
 
     public void Update()
     {
-     if (Input.GetKey(KeyCode.Escape))
+         if (Input.GetKey(KeyCode.Escape))
+        {
+             Application.Quit();
+        }
+
+    }
+    public void Respawn()
     {
-        Application.Quit();
+        Instantiate(playerPrefab);
     }
-
-    }
-
     public void Awake()
     {
         if (instance == null)
@@ -28,6 +34,5 @@ public class GameManager : MonoBehaviour
             Debug.LogError(message: "i tried to create a second game manager");
         }
         
-
     }
 }
