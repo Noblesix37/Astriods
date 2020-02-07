@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            tf.position += tf.right * movementSpeed * Time.deltaTime  ;
+            tf.position += tf.right * movementSpeed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.Space))
