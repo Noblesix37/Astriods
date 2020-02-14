@@ -6,16 +6,29 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int movespeed = 1;
-    public Vector3 userDirection = Vector3.right;
+    public Transform player;
+   
+    
    
 
+     void Start()
+    {
+        GameManager.instance.enemieslist.Add(this.gameObject);
+        
+    }
     public void Update()
     {
-        transform.Translate(userDirection * movespeed * Time.deltaTime);
+       
     }
     public void OnCollisionEnter2D(Collision2D OtherObject)
     {
         Destroy(OtherObject.gameObject);
+        Destroy(this.gameObject);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.instance.enemieslist.Remove(this.gameObject);
     }
 }
 

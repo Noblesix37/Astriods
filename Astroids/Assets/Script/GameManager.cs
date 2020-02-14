@@ -7,11 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject player;
+    public GameObject asteroidPrefab;
     public static GameManager instance;
     public int lives = 3;
     public int score = 0;
     public bool isPaused = false;
+    public List<GameObject> enemieslist = new List<GameObject>();
+    public GameObject[] enemyprefabs;
 
+     void Start()
+   
+    {
+ 
+    }
     public void Update()
     {
          if (Input.GetKey(KeyCode.Escape))
